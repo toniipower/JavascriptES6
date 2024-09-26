@@ -1,29 +1,43 @@
+html{
+  box-sizing: border-box !important;
+}
+
 body {
+  box-sizing: border-box;
   background: url(../img/bgblanco.png) repeat;
   text-align: justify;
   font-family: Tahoma, Geneva, sans-serif;
   font-size: 14px;
+  height: 100vh;
+}
+
+.global_container{
+  border-radius: 10%;
 }
 
 .header {
-  background: url(../img/bgblue2.png) repeat;
+  background: url(../img/me.jpeg) repeat;
+  background-size: contain;
   opacity: 0.5;
   text-align: center;
   padding: 5px;
   color: rgb(255,250,250,0.90);
   text-shadow: 2px 2px 4px rgb(0,0,0,0.75);
+  border-radius: 3% 10%;
 }
 
 .topnav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   overflow: hidden;
-  background-color: rgb(210,105,30,0.5);
+  background-color: rgba(210, 105, 30, 0);
   opacity: 0.85;
 }
 
 .topnav a {
-  float: left;
-  display: block;
-  color: rgb(255,250,250,0.90);
+  color: black !important;
+  /* color: rgb(255,250,250,0.90); */
   text-shadow: 2px 2px 4px rgb(0,0,0,0.75);
   text-align: center;
   padding: 14px 16px;
@@ -38,19 +52,24 @@ body {
 .container {
   display: flex;
   justify-content: center;
+  vertical-align: middle;
   flex-wrap: wrap;
   gap: 16px;
+  padding-bottom: 5em;
+  margin: auto;
 }
 
 .card {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  width: auto;
+  width: 250px;
   border: 1px solid rgb(211,211,211,0.5);
-  box-shadow: 2px 2px 8px 4px #d3d3d3d1;
+  box-shadow: 2px 2px 8px 4px #1d1818d1;
   border-radius: 15px;
   font-family: sans-serif;
+  padding: 16px;
+  
 }
 
 .cardTitle {
@@ -65,29 +84,47 @@ body {
 }
 
 .cardFooter {
-  background: rgb(50,205,50,0.25);
+  background: rgb(55 64 55 / 25%);
   border-radius: 0 0 15px 15px;
   padding: 10px;
+  width: auto;
   text-align: center;
 }
 
-.cardFooter a {
+
+
+.cardFooter:hover {
+  opacity: 0.5;
+  background-image: url(../img/me.jpeg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
   text-decoration: none;
-  color: rgb(0,0,255,0.80);
+  color: rgba(228, 93, 63, 0.8);
   text-shadow: 2px 2px 4px rgb(0,0,0,0.25);
-}
+} 
 
 @media screen and (max-width: 600px) {
+  .header {
+    background-position: center;
+    background-size: cover;
+  }
   .container {
     width: 100%;
   }
 }
 
 .footer {
-  background: url(../img/bgblue2.png) repeat;
+  padding-top: 20em;
+  height: 10em;
+  background-color: black;
   opacity: 0.5;
   text-align: center;
   padding: 20px;
-  color: rgb(255,250,250,0.90);
+  color: rgba(255, 255, 255, 0.9);
   text-shadow: 2px 2px 4px rgb(0,0,0,0.75);
+  bottom: 0;
+  position: relative;
+  width: 90%;
 }
+
