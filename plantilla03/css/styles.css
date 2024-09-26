@@ -60,6 +60,7 @@ body {
 }
 
 .card {
+  text-align: center;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -91,8 +92,6 @@ body {
   text-align: center;
 }
 
-
-
 .cardFooter:hover {
   opacity: 0.5;
   background-image: url(../img/me.jpeg);
@@ -117,14 +116,10 @@ body {
 .footer {
   padding-top: 20em;
   height: 10em;
-  background-color: black;
-  opacity: 0.5;
+  background-color: rgba(0, 0, 0, 0.618);
   text-align: center;
   padding: 20px;
   color: rgba(255, 255, 255, 0.9);
   text-shadow: 2px 2px 4px rgb(0,0,0,0.75);
-  bottom: 0;
-  position: relative;
-  width: 90%;
 }
 
