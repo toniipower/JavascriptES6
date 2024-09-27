@@ -19,7 +19,11 @@ Pagina principal del proyecto, donde comprobamos el nombre y usuario, si no intr
 Se abre la página, pon las credenciales anto y 123, en el caso de dejar vacía cualquiera de los promts, nos lanzará el mensaje de validación de campo vacío, si las pones bien, debería lanzar el mensaje de welcome y mostrar el contenido de la página.
 En el case contrario debe lanzar un alert con mensaje de error y preguntarte a través de un confirm si deseas volver a intentarlo.
 
+
 <h2> Flujo de funcionamiento con imagenes </h2>
+
+1. Primer acceso a la pagina
+
 <h3> Primer acceso a la página: </h3>
 <img src="./assets/inicio.png" alt="imagen principal de main" style="width:50%">
 
