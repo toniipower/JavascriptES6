@@ -1,0 +1,126 @@
+html{
+  box-sizing: border-box !important;
+}
+
+body {
+  box-sizing: border-box;
+  background: url(../img/bgblanco.png) repeat;
+  text-align: justify;
+  font-family: Tahoma, Geneva, sans-serif;
+  font-size: 14px;
+  height: 100vh;
+}
+
+.global_container{
+  border-radius: 10%;
+}
+
+.header {
+  background: url(../img/me.jpeg) repeat;
+  background-size: contain;
+  opacity: 0.5;
+  text-align: center;
+  padding: 5px;
+  color: rgb(255,250,250,0.90);
+  text-shadow: 2px 2px 4px rgb(0,0,0,0.75);
+  border-radius: 3% 10%;
+}
+
+.topnav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  overflow: hidden;
+  background-color: rgba(210, 105, 30, 0);
+  opacity: 0.85;
+}
+
+.topnav a {
+  color: black !important;
+  /* color: rgb(255,250,250,0.90); */
+  text-shadow: 2px 2px 4px rgb(0,0,0,0.75);
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.topnav a:hover {
+  background-color: rgb(128,128,128,0.25);
+  color: rgb(255,215,0,0.75);
+}
+
+.container {
+  display: none;
+  /* display: flex; */
+  justify-content: center;
+  vertical-align: middle;
+  flex-wrap: wrap;
+  gap: 16px;
+  padding-bottom: 5em;
+  margin: auto;
+}
+
+.card {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 250px;
+  border: 1px solid rgb(211,211,211,0.5);
+  box-shadow: 2px 2px 8px 4px #1d1818d1;
+  border-radius: 15px;
+  font-family: sans-serif;
+  padding: 16px;
+  
+}
+
+.cardTitle {
+  font-size: 24px;
+  padding: 10px 10px 0 10px;
+  ;
+}
+
+.cardBody {
+  padding: 10px;
+  flex: 1 1 100%;
+}
+
+.cardFooter {
+  background: rgb(55 64 55 / 25%);
+  border-radius: 0 0 15px 15px;
+  padding: 10px;
+  width: auto;
+  text-align: center;
+}
+
+.cardFooter:hover {
+  opacity: 0.5;
+  background-image: url(../img/me.jpeg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  text-decoration: none;
+  color: rgba(228, 93, 63, 0.8);
+  text-shadow: 2px 2px 4px rgb(0,0,0,0.25);
+} 
+
+@media screen and (max-width: 600px) {
+  .header {
+    background-position: center;
+    background-size: cover;
+  }
+  .container {
+    width: 100%;
+  }
+}
+
+.footer {
+  padding-top: 20em;
+  height: 10em;
+  background-color: rgba(0, 0, 0, 0.618);
+  text-align: center;
+  padding: 20px;
+  color: rgba(255, 255, 255, 0.9);
+  text-shadow: 2px 2px 4px rgb(0,0,0,0.75);
+}
+
