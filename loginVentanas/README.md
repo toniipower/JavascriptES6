@@ -24,25 +24,23 @@ En el case contrario debe lanzar un alert con mensaje de error y preguntarte a t
 
 1. Primer acceso a la pagina
 
-<h3> Primer acceso a la página: </h3>
 <img src="./assets/inicio.png" alt="imagen principal de main" style="width:50%">
 
-<h3> Dejando un campo vacío: </h3>
+2. Dejando un campo vacío:
 <img src="./assets/campoVacio.png" alt="imagen principal de main" style="width:50%">
 <img src="./assets/validacionCampoVacio.png" alt="imagen principal de main" style="width:50%">
 
-<h3> Error en las credenciales: </h3>
+3. Error en las credenciales:
 <img src="./assets/errorCredenciales.png" alt="imagen principal de main" style="width:50%">
 
-<h3> Pregunta si deseas volver a intentarlo: </h3>
+4. Pregunta si deseas volver a intentarlo:
 <img src="./assets/mensaje_confirmacion.png" alt="imagen principal de main" style="width:50%">
 <img src="./assets/confirmacion_cancelada.png" alt="imagen principal de main" style="width:50%">
 
-
-<h3> En caso de que tengamos un error o demos cancelar en volver a intentar: </h3>
+5. En caso de que tengamos un error o demos cancelar en volver a intentar:
 <img src="./assets/carga_sin_contenido.png" alt="imagen principal de main" style="width:50%">
 
-<h3> Una vez consigamos acceder con nuestras credenciales: </h3>
+6. Una vez consigamos acceder con nuestras credenciales:
 <img src="./assets/index.png" alt="imagen principal de main" style="width:50%">
 
 
@@ -53,9 +51,8 @@ En el case contrario debe lanzar un alert con mensaje de error y preguntarte a t
 anto
 # Contrasña
 123
-
 ```
-
+## Clonatelo
 
 ```bash
 # Clona el repositorio
