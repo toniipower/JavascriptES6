@@ -22,7 +22,7 @@ function login(){
 function validar(nombreUser, passUser, nombreUsuario, passUsuario, userLength) {
     console.log(userLength)
     if (nombreUser == "" | passUser == "") {
-        contenido.innerHTML = "<div class='card marginBot containerCard bgColor'><p class='center'> Debes introducir algo </p> <br> <br> <p class='center'><a  href='./index.html'>Reintentar</a></p></div>";
+        contenido.innerHTML = "<div class='card marginBot containerCard bgColor '><p class='center'> Debes introducir algo </p> <br> <br> <p class='center'><a  href='./index.html'>Reintentar</a></p></div>";
     } else {
         if (userLength <= 3 ) {
             contenido.innerHTML = "<div class='card marginBot containerCard bgColor'><p class='center'> Oye, el usurario debe tener mas de 3 caracteres! </p> <br> <br> <p class='center'><a  href='./index.html'>Reintentar</a></p></div>";
@@ -31,9 +31,14 @@ function validar(nombreUser, passUser, nombreUsuario, passUsuario, userLength) {
             contenido.innerHTML = "<div class='card marginBot containerCard bgColor'><p class='center'> El usuario o la contraseña no son correctos! </p> <br> <br> <p class='center'><a  href='./index.html'>Reintentar</a></p></div>";
             // alert("El usuario o la contraseña no son correctos");
         } else if (nombreUser === nombreUsuario && passUser === passUsuario) {
-            alert("Puede pasar")
-            containerCardId.style.display = "flex";
-            formContainerId.style.display = "none"
+            // alert("Puede pasar")
+            // contenido.innerHTML ="<p class='center'> Cargando contenido...</p>"
+            document.getElementById('loading').style.display = 'flex';
+            setTimeout(()=>{
+                document.getElementById('loading').style.display = 'none';
+                containerCardId.style.display = "flex";
+                formContainerId.style.display = "none"
+            }, 1000)
         } 
     }
 }
