@@ -16,7 +16,7 @@ Pagina principal del proyecto, donde comprobamos el nombre y usuario, si no intr
 
 ## Funcionamiento
 
-Se abre la página, pon las credenciales anto y 123, en el caso de dejar vacía cualquiera de los promts, nos lanzará el mensaje de validación de campo vacío, si las pones bien, debería lanzar el mensaje de welcome y mostrar el contenido de la página.
+Se abre la página, pon las credenciales antonio y 123, en el caso de dejar vacía cualquiera de los promts, nos lanzará el mensaje de validación de campo vacío, si las pones bien, debería lanzar el mensaje de welcome y mostrar el contenido de la página.
 En el case contrario debe lanzar un alert con mensaje de error y preguntarte a través de un confirm si deseas volver a intentarlo.
 
 
@@ -27,28 +27,33 @@ En el case contrario debe lanzar un alert con mensaje de error y preguntarte a t
 <img src="./assets/inicio.png" alt="imagen principal de main" style="width:50%">
 
 2. Dejando un campo vacío:
-<img src="./assets/campoVacio.png" alt="imagen principal de main" style="width:50%">
-<img src="./assets/validacionCampoVacio.png" alt="imagen principal de main" style="width:50%">
+<img src="./assets/manejoDeErrorVacio.png" alt="imagen principal de main" style="width:50%">
 
 3. Error en las credenciales:
-<img src="./assets/errorCredenciales.png" alt="imagen principal de main" style="width:50%">
+<img src="./assets/manejorDeErrorIncorrecto.png" alt="imagen principal de main" style="width:50%">
 
-4. Pregunta si deseas volver a intentarlo:
-<img src="./assets/mensaje_confirmacion.png" alt="imagen principal de main" style="width:50%">
-<img src="./assets/confirmacion_cancelada.png" alt="imagen principal de main" style="width:50%">
+4. En caso de poner un nombre inferior a 3 carácteres:
+<img src="./assets/manejoDeErrorMenor3.png" alt="imagen principal de main" style="width:50%">
 
-5. En caso de que tengamos un error o demos cancelar en volver a intentar:
-<img src="./assets/carga_sin_contenido.png" alt="imagen principal de main" style="width:50%">
+5. Una vez consigamos acceder con nuestras credenciales:
+<img src="./assets/correcto.png" alt="imagen principal de main" style="width:50%">
 
-6. Una vez consigamos acceder con nuestras credenciales:
-<img src="./assets/index.png" alt="imagen principal de main" style="width:50%">
+<h2> Script </h2>
 
+Tengo 2 funciones principales.
+
+<h3> login() </h3>
+Función que recoge valores del DOM y las lanza a través de otra función.
+He querido añadir la función validar porque más adelante quiero ampliar el código poco a poco y modularizarlo es la forma mas cómoda para manejar posibles errores que puedan surgir en un futuro.
+
+<h3> validar() </h3>
+Está función es la que hace la gestión de errores, en un futuro va a tener un return con valores o con un booleano.
 
 ## Credenciales
 
 ```bash
 # Usuario
-anto
+antonio
 # Contrasña
 123
 ```
