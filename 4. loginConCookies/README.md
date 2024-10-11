@@ -1,6 +1,6 @@
 <p align="center">
   <a href="" rel="noopener">
- <img width=200px height=200px src="https://i.imgur.com/FxL5qM0.jpg" alt="Bot logo"></a>
+ <img src="./assets/index.png" alt="Bot logo"></a>
 </p>
 
 <h3 align="center">Formulario con Cookies & Numbers</h3>
@@ -16,11 +16,13 @@
 </div>
 
 ---
+<div align="center">
 
-<p align="center"> 
 🤖 Proyecto para la asignatura desarrollo en el entorno de cliente en el Instituto [Alang Turing]((https://img.shields.io/badge/license-MIT-blue.svg)).
-    <br> 
-</p>
+
+</div>
+
+<br> 
 
 ## 📝 Table of Contents
 
@@ -74,6 +76,35 @@ antonio
 # Contrasña
 123
 ```
+
+## ⌨️  coding login <a name = "codingLogin"></a>
+.
+├── assets/
+├── css/
+├── cursor/
+├── ejercicios/
+│   ├── ejer01/
+│   │   ├── js/
+│   │   │   └── scriptCalc.js
+│   │   └── index.html
+│   ├── ejer02/
+│   │   ├── js/
+│   │   │   └── scriptConversor.js
+│   │   ├── index.html
+│   │   └── main.html
+│   └── img/
+├── js/
+│   ├── captures.js
+│   ├── cookies.js
+│   ├── deleteCookie.js
+│   ├── existeLaCookie.js
+│   ├── getCookie.js
+│   ├── login.js
+│   ├── logout.js
+│   └── validate.js
+├── index.html
+└── README.md
+
 
 ## ⌨️  coding login <a name = "codingLogin"></a>
 
@@ -216,6 +247,51 @@ if (!getCookie("LoggIn")) {
     window.location.href = "../index.html";
     // window.location.reload();
 }
+```
+
+**funciones.js**
+```js
+/* Funcion de navegación de main.html */
+const container = document.querySelector('.desplegableContain');
+const items = container.querySelectorAll('.item');
+const containerCard = document.querySelector('#containerCardId');
+/* Por cada elemento llamado item hago un addeventListener, para que me de su posición y hacer un innerHtml personalizado, asi me ahorro algo de código y tiene un comportamiento parecido a un framework */
+items.forEach((item, index) => {
+    item.addEventListener('click', () => {
+        switch (index) {
+            case 0:
+                containerCard.innerHTML = 
+                `<div class="card">
+                <div class="cardTitle">MiniCalc</div>
+                <div class="cardBody">
+                    <p>Pequeña calculadora para juguetear</p>
+                </div>
+                <a class="cardFooter" href="ejer01/index.html"> <div > Solución </div> </a>
+                <a class="cardFooter" href="./main.html"> <div > Atrás </div> </a>
+                </div>`;
+                break;
+            case 1:
+                containerCard.innerHTML = 
+                `<div class="card">
+                <div class="cardTitle">Conversor</div>
+                <div class="cardBody">
+                    <p>Conversor de bases:</p>
+                    <p>Base 2</p>
+                    <p>Base 8</p>
+                    <p>Base 16</p>
+                </div>
+                <a class="cardFooter" href="ejer02/index.html"> <div > Solución </div> </a>
+                <a class="cardFooter" href="./main.html"> <div > Atrás </div> </a>
+                </div>`;
+                break;
+            default:
+                containerCard.innerHTML = `<div id="mensaje">SELECCIONE UN EJERCICIO DE LA BARRA DE NAVEGACION</div>`;
+                break;
+        }
+    });
+});
+
+
 ```
 
 ## ⌨️  coding miniCalc <a name = "miniCalc"></a>
