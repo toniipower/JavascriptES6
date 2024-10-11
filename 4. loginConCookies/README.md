@@ -3,7 +3,7 @@
  <img width=200px height=200px src="https://i.imgur.com/FxL5qM0.jpg" alt="Bot logo"></a>
 </p>
 
-<h3 align="center">Project Title</h3>
+<h3 align="center">Formulario con Cookies & Numbers</h3>
 
 <div align="center">
 
@@ -17,7 +17,8 @@
 
 ---
 
-<p align="center"> 🤖 Few lines describing what your bot does.
+<p align="center"> 
+🤖 Proyecto para la asignatura desarrollo en el entorno de cliente en el Instituto [Alang Turing]((https://img.shields.io/badge/license-MIT-blue.svg)).
     <br> 
 </p>
 
@@ -27,117 +28,305 @@
 - [Demo / Working](#demo)
 - [How it works](#working)
 - [Usage](#usage)
-- [Getting Started](#getting_started)
-- [Deploying your own bot](#deployment)
-- [Built Using](#built_using)
-- [TODO](../TODO.md)
-- [Contributing](../CONTRIBUTING.md)
+- [Coding login](#codingLogin)
+- [Coding miniCalc](#miniCalc)
+- [Coding conversor](#conversor)
 - [Authors](#authors)
-- [Acknowledgments](#acknowledgement)
+- [References](#references)
 
 ## 🧐 About <a name = "about"></a>
 
-Write about 1-2 paragraphs describing the purpose of your bot.
+Poyecto de clase centrado en acceder mediante un formulario login creando un **cookie** y poder navegar por la página hasta que nos deslogueemos o se acabe el tiempo estipulado.
 
 ## 🎥 Demo / Working <a name = "demo"></a>
 
+<div align="center">
+
 ![Working](./assets/demo.gif)
+
+</div>
 
 
 ## 💭 How it works <a name = "working"></a>
 
-The bot first extracts the word from the comment and then fetches word definitions, part of speech, example and source from the Oxford Dictionary API.
+Abrimos el documento, veremos como el login ya tiene las credenciales para que se ahorre tiempo a escribir, si el login no es correcto, no nos debería dejar entrar.
 
-If the word does not exist in the Oxford Dictionary, the Oxford API then returns a 404 response upon which the bot then tries to fetch results form the Urban Dictionary API.
+Una vez dentro nos aparecerá una barra de navegacion superior que nos agregará funcionalidades nuevas, como la de movernos a través de la web y hacer el temido logout.
 
-The bot uses the Pushshift API to fetch comments, PRAW module to reply to comments and Heroku as a server.
-
-The entire bot is written in Python 3.6
+Además aparecerá un apartado nuevo cada semana, en este caso es Numbers, donde hay dos ejercicios uno es una minicalculadora y otro es un convertidor de bases de decimal a otras.
 
 ## 🎈 Usage <a name = "usage"></a>
 
-To use the bot, type:
+Para usarlo:
 
 ```
-!dict word
+git clone https://github.com/toniipower/JavascriptES6.git
 ```
 
-The first part, i.e. "!dict" **is not** case sensitive.
+Se descargarán todos los proyectos que tengo hasta el momento.
+En este caso debes abrir la carpeta **4. LoginConCookies**
 
-The bot will then give you the Oxford Dictionary (or Urban Dictionary; if the word does not exist in the Oxford Dictionary) definition of the word as a comment reply.
+Credenciales por si se olvidan (aunque no creo :P)
 
-### Example:
-
-> !dict what is love
-
-**Definition:**
-
-Baby, dont hurt me~
-Dont hurt me~ no more.
-
-**Example:**
-
-Dude1: Bruh, what is love?
-Dude2: Baby, dont hurt me, dont hurt me- no more!
-Dude1: dafuq?
-
-**Source:** https://www.urbandictionary.com/define.php?term=what%20is%20love
-
----
-
-<sup>Beep boop. I am a bot. If there are any issues, contact my [Master](https://www.reddit.com/message/compose/?to=PositivePlayer1&subject=/u/Wordbook_Bot)</sup>
-
-<sup>Want to make a similar reddit bot? Check out: [GitHub](https://github.com/kylelobo/Reddit-Bot)</sup>
-
-## 🏁 Getting Started <a name = "getting_started"></a>
-
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See [deployment](#deployment) for notes on how to deploy the project on a live system.
-
-### Prerequisites
-
-What things you need to install the software and how to install them.
-
-```
-Give examples
+```bash
+# Usuario
+antonio
+# Contrasña
+123
 ```
 
-### Installing
+## ⌨️  coding login <a name = "codingLogin"></a>
 
-A step by step series of examples that tell you how to get a development env running.
+**capures.js**
+```js
+/* ARCHIVO DE JS DONDE TENGO CAPTURAS PRINCIPALES USADAS EN VARIOS ARCHIVOS PARA NO TENER QUE CAPTURAR EN CADA ARCHIVO */
 
-Say what the step will be
+/* ELEMENTOS DEL DOM RELACIONADOS CON FORMULARIO */
+const formButton = document.getElementById("formButton");
+const formContainerId = document.getElementById("formContainerId");
+const userForm = document.getElementById("userForm");
+const passForm = document.getElementById("passForm");
+let pass = passForm.value;
+let usuario = userForm.value;
+
+/* ELEMENTOS DEL DOM RELACIONADOS CON LA BARRA DE NAVEGACIÓN */
+const menuNav = document.getElementById("menuNav");
+const logoutButton = document.getElementById("logout");
+
+/* VARIABLES DE CREDENCIALES */
+const NOMBRE_USUARIO = "antonio";
+const PASS_USUARIO = "123";
+```
+
+**login.js**
+```js
+formButton.addEventListener("click", login);
+/* Comprobación para ver si existe la cookie con el token dado */
+if (getCookie("LoggIn")) {
+    // Si la cookie existe, nos lleva al main
+    window.location.href = "ejercicios/main.html";
+}
+
+/* Función que hace que puedas entrar o no!
+Si `validate()` es true, llamamos a `thereMyCookies` para crear la cookie */
+function login() {
+
+    // Llamamos a la función de validación
+    if (validate(usuario, pass, NOMBRE_USUARIO, PASS_USUARIO, usuario.length)) {
+        thereMyCookies("LoggIn", "true");
+        window.location.href = "ejercicios/main.html";
+    } else {
+        console.log("Credenciales inválidas, no se crea la cookie.");
+    }
+
+    return usuario = userForm.value
+}
+```
+**getCookie.js**
+```js
+/* Función que captura las cookies y me quedo con el name o nombre */
+function getCookie(name) {
+
+    let cookies = document.cookie.split(";");
+
+    console.log(cookies);
+    for (let cookie of cookies) {
+        cookie = cookie.split("="); // me quedo con: [nombre?, valor?]
+        console.log(cookie);
+        if (decodeURIComponent(cookie[0]) == name) { // comparo nombre? con el que estoy buscando
+            return decodeURIComponent(cookie[1]); // me quedo con el valor del nombre que estoy buscando
+        }
+    }
+    
+    // return false;
+    
+}
+```
+**validate.js**
+```js
+/* Función de validación, donde se hace una comprobación en el formulario y se hace una comparación con nuestras credenciales guardadas, para ello le paso los argumentos que ha de comprobar */
+function validate(nombreUser, passUser, nombreUsuario, passUsuario, userLength) {
+    let validateOk = true;
+
+    // Si los campos están vacíos
+    if (nombreUser == "" || passUser == "") {
+        contenido.innerHTML = "<div class='card marginBot containerCard bgColor'><p class='center'> Debes introducir algo </p><br><br><p class='center'><a href='./index.html'>Reintentar</a></p></div>";
+        validateOk = false;
+
+    // Si el nombre de usuario tiene menos de 3 caracteres
+    } else if (userLength <= 3) {
+        contenido.innerHTML = "<div class='card marginBot containerCard bgColor'><p class='center'> El usuario debe tener más de 3 caracteres! </p><br><br><p class='center'><a href='./index.html'>Reintentar</a></p></div>";
+        validateOk = false;
+
+    // Si las credenciales no coinciden
+    } else if (nombreUser !== nombreUsuario || passUser !== passUsuario) {
+        contenido.innerHTML = "<div class='card marginBot containerCard bgColor'><p class='center'> El usuario o la contraseña no son correctos! </p><br><br><p class='center'><a href='./index.html'>Reintentar</a></p></div>";
+        validateOk = false;
+
+    // Si las credenciales coinciden
+    } else if (nombreUser === nombreUsuario && passUser === passUsuario) {
+        validateOk = true;
+    }
+
+    return validateOk;
+}
 
 ```
-Give the example
+**cookies.js**
+```js
+//Función que setea la cookie, entran por parametros dos valores String que se envían desde login.js y son usados para crear la cookie.
+function thereMyCookies(nombre, valor) {
+    console.log(`${nombre}  ${valor} <<<<<<<<<<<<<<<<<<<<<<<<<<<`);
+    
+    let fechaExpiracion = new Date();
+
+    fechaExpiracion.setTime(fechaExpiracion.getTime() + (1 * 60 * 1000)); // 1 minuto = 60 * 1000 milisegundos
+
+    document.cookie =`${encodeURIComponent(nombre)}=${encodeURIComponent(valor)}; expires=${fechaExpiracion.toUTCString()}; path=/; SameSite=Strict; Secure;`;
+    console.log(document.cookie); // muestro la creación
+}
+```
+**logout.js**
+```js
+/* Cuando pulsamos el boton de logout, llamamos a delete y le pasamos el token una vez hecho, redireccionamos */
+document.getElementById("logout").addEventListener("click", function() {
+    // console.log(usuario);
+    alert("Atención, estás saliendo......");
+    
+    deleteCookie("LoggIn");
+    window.location.href = "../index.html";
+    
+});
 ```
 
-And repeat
-
+**deleteCookie.js**
+```js
+/* Elimino la cookie añadiendo la fecha de expiración hasta la primera fecha posible que se permite poner, para que no pueda haber resquicios */
+function deleteCookie(name) {
+    console.log(name);
+    document.cookie = `${name}=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;SameSite=Strict;Secure`;
+}
 ```
-until finished
+
+**existeLaCookie.js**
+```js
+/* Funcion creada de ultima hora para llevarla al main (se implementará en otros sitios en un futuro) */
+if (!getCookie("LoggIn")) {
+    // Si la cookie existe, mostramos el formulario
+    window.location.href = "../index.html";
+    // window.location.reload();
+}
 ```
 
-End with an example of getting some data out of the system or using it for a little demo.
+## ⌨️  coding miniCalc <a name = "miniCalc"></a>
 
-## 🚀 Deploying your own bot <a name = "deployment"></a>
+**scriptCalc.js**
+```js
+let input1 = document.getElementById('input1');
+let input2 = document.getElementById('input2');
+let resultado = document.getElementById('resultado');
 
-To see an example project on how to deploy your bot, please see my own configuration:
+/* Suma */
+document.getElementById('sumar').addEventListener('click', () => {
+  let num1 = parseFloat(input1.value);
+  let num2 = parseFloat(input2.value);
+  let suma = num1 + num2;
+  resultado.innerHTML = `Resultado: ${suma}`;
+});
 
-- **Heroku**: https://github.com/kylelobo/Reddit-Bot#deploying_the_bot
+/* Resta */
+document.getElementById('restar').addEventListener('click', () => {
+  let num1 = parseFloat(input1.value);
+  let num2 = parseFloat(input2.value);
+  let resta = num1 - num2;
+  resultado.innerHTML = `Resultado: ${resta}`;
+});
 
-## ⛏️ Built Using <a name = "built_using"></a>
+/* División */
+document.getElementById('dividir').addEventListener('click', () => {
+  let num1 = parseFloat(input1.value);
+  let num2 = parseFloat(input2.value);
+  if (num2 === 0) {
+    resultado.innerHTML = 'No se puede dividir por 0';
+  } else {
+    let division = num1 / num2;
+    resultado.innerHTML = `Resultado: ${division}`;
+  }
+});
 
-- [PRAW](https://praw.readthedocs.io/en/latest/) - Python Reddit API Wrapper
-- [Heroku](https://www.heroku.com/) - SaaS hosting platform
+/* Factorial */
+document.getElementById('factorial').addEventListener('click', () => {
+  let num1 = parseInt(input1.value);
+  if (num1 < 0) {
+    resultado.innerHTML = 'No hay factorial de numeros negativos';
+  } else {
+    let factorial = 1;
+    for (let i = 1; i <= num1; i++) {
+      factorial *= i;
+    }
+    resultado.innerHTML = `Factorial de ${num1}: ${factorial}`;
+  }
+});
+
+/* Me quedo con la parte entera */
+document.getElementById('entero').addEventListener('click', () => {
+  let num1 = parseFloat(input1.value);
+  let parteEntera = Math.trunc(num1);
+  input1.value = parteEntera;
+  resultado.innerHTML = `Parte entera de ${num1}: ${parteEntera}`;
+});
+
+/* Me quedo con la parte decimal */
+document.getElementById('decimales').addEventListener('click', () => {
+  let num1 = parseFloat(input1.value);
+  let parteDecimal = num1 - Math.trunc(num1);
+  input2.value = parteDecimal; // Limitamos los decimales a 5 cifras
+  resultado.innerHTML = `Parte decimal de ${num1}: ${parteDecimal}`;
+});
+
+document.getElementById('volver').addEventListener('click', () => {
+    window.history.back();
+  });
+```
+
+## ⌨️  coding conversor <a name = "conversor"></a>
+```js
+/* CAPTURAMOS EL NUMERO DECIMAL Y EL SELECT. HACEMOS LA TIPICA VALIDACION Y LUEGO USAMOS TOSTRING(BASE) PARA TRANSFORMAR EL NUMERO EN ESA BASE.*/
+document.getElementById('convertir').addEventListener('click', () => {
+  let numero = parseInt(document.getElementById('numero').value); 
+  let base = document.getElementById('base').value;
+
+  if (isNaN(numero)) {
+    document.getElementById('resultado').innerHTML = "Por favor, introduce un número válido.";
+    return;
+  }
+
+  // Convertimos el número a la base seleccionada
+  let resultado = numero.toString(base);
+
+  // Mostramos el resultado en el div
+  document.getElementById('resultado').innerHTML = `Resultado en base ${base}: ${resultado.toUpperCase()}`;
+});
+
+document.getElementById('volver').addEventListener('click', () => {
+    window.history.back();
+  });
+```
 
 ## ✍️ Authors <a name = "authors"></a>
 
-- [@kylelobo](https://github.com/kylelobo) - Idea & Initial work
+- [@toniipower](https://github.com/toniipower/) - Creador
 
-See also the list of [contributors](https://github.com/kylelobo/The-Documentation-Compendium/contributors) who participated in this project.
+## 🎉 References & helpers <a name = "references"></a>
 
-## 🎉 Acknowledgements <a name = "acknowledgement"></a>
+- [@gifrun](https://gifrun.com/) - Para crear gifs
+- [@pandao](https://pandao.github.io/editor.md/en.html) - Open source online markdown editor.
+- [@chatGPT](https://chat.openai.com/chat) - Un amigo para todos los desarrolladores.
+- [@Jota](https://github.com/jgarmay674/) - Algún código de inspiración
+- [@BootStrap](https://icons.getbootstrap.com/) - Iconos de BootStrap.
+- [@Online-image-editor](https://www.online-image-editor.com/) - Quitar fondos online.
+- [@Haike](https://haikei.app/generators/) - Para diseño con olas(entre otros).
 
-- Hat tip to anyone whose code was used
-- Inspiration
-- References
+
+
+

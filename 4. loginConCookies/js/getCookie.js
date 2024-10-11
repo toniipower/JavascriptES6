@@ -1,5 +1,6 @@
+/* Función que captura las cookies y me quedo con el name o nombre */
 function getCookie(name) {
-    console.log(document.cookie + "getCookie");
+
     let cookies = document.cookie.split(";");
 
     console.log(cookies);

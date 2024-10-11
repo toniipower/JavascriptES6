@@ -1,5 +1,5 @@
 formButton.addEventListener("click", login);
-
+/* Comprobación para ver si existe la cookie con el token dado */
 if (getCookie("LoggIn")) {
     // Si la cookie existe, nos lleva al main
     window.location.href = "ejercicios/main.html";
@@ -8,9 +8,6 @@ if (getCookie("LoggIn")) {
 /* Función que hace que puedas entrar o no!
 Si `validate()` es true, llamamos a `thereMyCookies` para crear la cookie */
 function login() {
-    // Capturamos los valores actuales del formulario
-    /* usuario = userForm.value;
-    pass = passForm.value; */
 
     // Llamamos a la función de validación
     if (validate(usuario, pass, NOMBRE_USUARIO, PASS_USUARIO, usuario.length)) {

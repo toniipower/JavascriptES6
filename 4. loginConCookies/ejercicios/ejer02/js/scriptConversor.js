@@ -1,5 +1,4 @@
-/* CONVERSOR */
-/* COGEMOS EL NUMERO DECIMAL Y EL SELECT. HACEMOS LA TIPICA VALIDACION Y LUEGO USAMOS TOSTRING(BASE) PARA TRANSFORMAR EL NUMERO EN ESA BASE.*/
+/* CAPTURAMOS EL NUMERO DECIMAL Y EL SELECT. HACEMOS LA TIPICA VALIDACION Y LUEGO USAMOS TOSTRING(BASE) PARA TRANSFORMAR EL NUMERO EN ESA BASE.*/
 document.getElementById('convertir').addEventListener('click', () => {
   let numero = parseInt(document.getElementById('numero').value); 
   let base = document.getElementById('base').value;
