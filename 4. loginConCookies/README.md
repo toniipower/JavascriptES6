@@ -41,7 +41,7 @@ Write about 1-2 paragraphs describing the purpose of your bot.
 
 ## 🎥 Demo / Working <a name = "demo"></a>
 
-![Working](https://media.giphy.com/media/20NLMBm0BkUOwNljwv/giphy.gif)
+![Working](<img src="./assets/demo.gif" alt="demo funcionamiento" style="width:50%">)
 
 ## 💭 How it works <a name = "working"></a>
 
