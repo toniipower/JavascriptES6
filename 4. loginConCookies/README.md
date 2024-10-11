@@ -30,6 +30,7 @@
 - [Demo / Working](#demo)
 - [How it works](#working)
 - [Usage](#usage)
+- [Scafolding](#scafolding)
 - [Coding login](#codingLogin)
 - [Coding miniCalc](#miniCalc)
 - [Coding conversor](#conversor)
@@ -68,7 +69,7 @@ git clone https://github.com/toniipower/JavascriptES6.git
 Se descargarán todos los proyectos que tengo hasta el momento.
 En este caso debes abrir la carpeta **4. LoginConCookies**
 
-Credenciales por si se olvidan (aunque no creo :P)
+Credenciales por si se olvidan (aunque no creo 😜)
 
 ```bash
 # Usuario
@@ -77,7 +78,14 @@ antonio
 123
 ```
 
-## ⌨️  coding login <a name = "codingLogin"></a>
+## 🌳  scafolding <a name = "scafolding"></a>
+<div align="center">
+Representación de mi estructura de carpetas recreada por chatGPT.
+
+<img src="./img/scafolding.png" alt="scafolding"></a>
+
+</div>
+
 .
 ├── assets/
 ├── css/
