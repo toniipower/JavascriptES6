@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Javascript</title>
+  <link href="../../img/favicon.png" rel="icon" type="image/x-icon" >
+  <link href="../../../css/styles.css" rel="stylesheet" type="text/css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+  <script defer src="./js/scriptConversor.js"></script>
+  <!-- <script defer src="../js/logout.js"></script> -->
+  <!-- <script defer src="./scriptCalc.js"></script> -->
+  <script defer src="../js/funciones.js"></script>
+
+</head>
+<body>
+  <div class="mainContainer">
+    <!-- ---------MENU----------- -->
+    <div class="topnav">
+      <div class="cara"></div>
+      <ul id="menuNav">
+
+        <li><a href="https://www.w3schools.com/js/default.asp">w3schools</a></li>
+        <li><a href="https://es.javascript.info/js">javascript.info</a></li>
+        <li><a href="https://developer.mozilla.org/es/docs/Web/JavaScript">MDN</a></li>
+        <li><a href="https://github.com/toniipower/JavascriptES6/tree/main/4.%20loginConCookies">GitHub</a></li>
+
+      </ul>
+      <div class="header">
+        <div class="overlay">
+          <h3>Ejemplos – FUNDAMENTOS DE JS (ES6)</h3>
+          <h4>Desarrollo WEB en entorno cliente</h4>
+          <h5>Login con Local Storage <i class="bi bi-chat-dots"></i></h5>
+        </div>
+      </div>
+    </div>
+    <!-- ------MAIN-CONTENT------ -->
+    <div class="container" id="contenido">
+    <!-- CARDS -->
+    <div class="containerCard" id="containerCardId">
+      <div class="calcContainer center">
+        <h2>Conversor de Bases</h2>
+
+        <label for="numero">Introduce un número:</label>
+        <input type="number" id="numero" placeholder="Número" />
+
+        <label for="base">Selecciona la base:</label>
+        <select id="base">
+          <option value="2">Binario (Base 2)      </option>
+          <option value="8">Octal (Base 8)        </option>
+          <option value="16">Hexadecimal (Base 16)</option>
+        </select>
+
+        <button class="btnCalc" id="convertir">Convertir</button>
+
+        <div id="resultado"></div>
+
+        <div class="volverContainer">
+          <button id="volver" class="volver"><i class="bi bi-arrow-left-circle-fill"></i></button>
+        </div>
+
+      </div>
+      
+    </div>
+
+  </div>
+  <!-- ---------FOOTER----------- -->
+  <div class="footer">
+    <div> <h2>© Antonio J. Heredia Leiva</h2></div>
+    <div> <h2> <a class="readmeFooter" href="https://github.com/toniipower/JavascriptES6/blob/main/4.%20loginConCookies/README.md"> Readme </a></h2></div>
+  </div>
+  </div>
+</body>
+
+</html>
