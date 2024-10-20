@@ -6,13 +6,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Javascript</title>
   <link href="../../img/favicon.png" rel="icon" type="image/x-icon" >
-  <link href="../../css/styles.css" rel="stylesheet" type="text/css" />
+  <link href="../../../css/styles.css" rel="stylesheet" type="text/css" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
   <script defer src="../js/funciones.js"></script>
-  <script defer src="../js/logout.js"></script>
-  <script defer src="./js/scriptCalc.js"></script>
-  <script defer src="../js/funciones.js"></script>
+  <script defer src="./js/string.js"></script>
+  <script defer src="./js/stringApiGenerator.js"></script>
 
 </head>
 <body>
@@ -31,7 +30,7 @@
         <div class="overlay">
           <h3>Ejemplos – FUNDAMENTOS DE JS (ES6)</h3>
           <h4>Desarrollo WEB en entorno cliente</h4>
-          <h5>Login con COOKIES<i class="bi bi-cookie"></i></h5>
+          <h5>Login con Local Storage <i class="bi bi-chat-dots"></i></h5>
         </div>
       </div>
     </div>
@@ -39,33 +38,45 @@
     <div class="container" id="contenido">
     <!-- CARDS -->
     <div class="containerCard" id="containerCardId">
-      <div class="calcContainer center">
-        <h2>Calculadora</h2>
-        <div class="calcInputs">
-          <div class="calcItem" >
-            <label for="input1">Número 1:</label>
-            <input class="inputCalc center"  type="number" id="input1" step="any" placeholder="Introduce un número">
-          </div>
-          <div class="calcItem" >
-            <label for="input2">Número 2:</label>
-            <input class="inputCalc center" type="number" id="input2" step="any" placeholder="Introduce otro número">
+      <div class="stringContainer center">
+        <h2>Modificador de texto</h2>
+        <div class="stringInput">
+          <div class="stringItem">
+            <label for="cadena">Escribe una palabra (en inglés):</label>
+            <div class="generadorContainer">
+              <input type="text" id="introducePalabra">
+              <button type="button" id="generate">Buscar significado</button>
+            </div>
+            <textarea class="cadena" name="cadena" id="cadena"></textarea>
           </div>
         </div>
 
         <div class="calcBtns">
-          <button id="sumar" class="btnCalc">Sumar</button>
-          <button id="restar" class="btnCalc">Restar</button>
-          <button id="dividir" class="btnCalc">Dividir</button>
-          <button id="factorial" class="btnCalc">Factorial</button>
-          <button id="entero" class="btnCalc">Parte entera</button>
-          <button id="decimales" class="btnCalc">Parte decimal</button>
+          <button id="mayuscula" class="btnCalc">Mayuscula</button>
+          <button id="minuscula" class="btnCalc">Minuscula</button>
+          <button id="primeraMayus" class="btnCalc">A__</button>
+          <button id="ultimaMayus" class="btnCalc">__A</button>
+          <button id="primeraMinus" class="btnCalc">a__</button>
+          <button id="ultimaMinus" class="btnCalc">__a</button>
+          <button id="mayusBCD" class="btnCalc">BCD</button>
+          <button id="minusBCD" class="btnCalc">bcd</button>
+          <button id="mayusAEI" class="btnCalc">AEI</button>
+          <button id="minusAEI" class="btnCalc">aei</button>
+          <button id="random" class="btnCalc">Random</button>
+          <button id="velMas" class="btnCalc">Mas velocidad</button>
+          <button id="VelMenos" class="btnCalc">Menos velocidad</button>
+          <button id="stop" class="btnCalc">Stop</button>
         </div>
 
         <div class="volverContainer">
           <button id="volver" class="volver"><i class="bi bi-arrow-left-circle-fill"></i></button>
         </div>
+
+        <div class="velocidadContainer">
+          <span class="velocidad"> velocidad </span>
+          <input type="text" placeholder="0s" id="velocidad" class="velocidad" disabled>
+        </div>
       
-        <div id="resultado"></div>
       </div>
       
     </div>

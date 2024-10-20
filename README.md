@@ -2,4 +2,6 @@
 
 1. "Empezamos con la plantilla 3: https://github.com/toniipower/JavascriptES6/tree/main/plantilla03"
 2. "Login con ventanas:  "
-3.
+3. "LoginFormulario: "
+4. "Login con Cookies:"
+5. "Login con Session: "
